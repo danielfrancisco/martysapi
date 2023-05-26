@@ -21,16 +21,17 @@ router.get("/menu",function(req,res){
     
 })
 
-  router.post('/menu', (req, res) => {
+router.post('/menu', (req, res) => {
     let name = String(req.body.data.name)
     let img= String(req.body.data.img)
     let price = req.body.data.price
-    let values = "("+"'"+name+"'"+","+"'"+img+"'"+","+price+")"
-    var sql = "INSERT INTO cart (name, img, price) VALUES"+values
+    let amount =req.body.data.amount
+    let values = "("+"'"+name+"'"+","+"'"+img+"'"+","+price+","+amount+")"
+    var sql = "INSERT INTO cart (name, img, price, amount) VALUES"+values
     
    con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("1 record inserted");
+    
   });
     
 });
