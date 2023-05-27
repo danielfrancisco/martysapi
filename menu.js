@@ -33,7 +33,7 @@ router.post('/menu', (req, res) => {
     if (err) throw err;
     
   });
-    
+    res.end()
 });
 
 
