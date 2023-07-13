@@ -1,5 +1,5 @@
 const express = require("express")
-const port = "3000"
+const PORT = process.env.PORT || 3030;
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const home = require('./home')
@@ -17,6 +17,6 @@ app.use('/',menu)
 app.use('/',about)
 app.use('/',cart)
 
-app.listen(port,function(){
+app.listen(PORT,function(){
     console.log("listening on port "+port)
 })

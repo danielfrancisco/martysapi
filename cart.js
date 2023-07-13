@@ -1,15 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const mysql = require("mysql");
 const { route } = require('./menu');
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "newuser",
-    password: "danielelmejor1",
-    database:"martys",
+require('dotenv').config()
 
-  });
+const mysql = require('mysql2')
+const con = mysql.createConnection(process.env.DATABASE_URL)
   
   let data =""
   con.connect();
@@ -54,10 +50,6 @@ router.post("/cart",function(req,res){
   }
   res.end()
 })
-
-
-
-
 
 
 module.exports = router

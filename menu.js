@@ -1,16 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const mysql = require("mysql")
+require('dotenv').config()
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "newuser",
-    password: "danielelmejor1",
-    database:"martys",
+const mysql = require('mysql2')
+const con = mysql.createConnection(process.env.DATABASE_URL)
 
-  });
   let data =""
-  
   con.connect();
   con.query("SELECT * FROM menu", function (err, result) {
     data=result
