@@ -18,5 +18,5 @@ app.use('/',about)
 app.use('/',cart)
 
 app.listen(PORT,function(){
-    console.log("listening on port "+port)
+    console.log("listening on port "+PORT)
 })
